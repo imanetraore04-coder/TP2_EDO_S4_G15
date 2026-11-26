@@ -18,7 +18,7 @@ function [t,y,nfev] = integrer_edo(f,a,b,y0,N,methode)
 k1=f(tk,yk); ye=yk+h*k1; k2=f(tk+h,ye);y(k+1)=yk+h/2*(k1+k2);
             nfev=nfev+2;
         case "rk4" then
-k1=f(tk,yk); k2=f(tk+h/2,yk+hk1/2); k3=f(tk+h/2,yk+hk2/2); k4=f(tk+h,yk+hk3);y(k+1)=yk+(h/6)*(k1+2k2+2k3+k4);
+k1=f(tk,yk); k2=f(tk+h/2,yk+hk1/2); k3=f(tk+h/2,yk+hk2/2); k4=f(tk+h,yk+hk3);y(k+1)=yk+(h/6)*(k1+2k2+2+k4);
             nfev=nfev+4;
         else
             error("Methode inconnue : euler, heun ou rk4 attendue");
@@ -33,3 +33,4 @@ function p = ordre_edo(Eh,Eh2)
     // Un nombre fini ne garantit pas un ordre interpretable :
     // verifier aussi stabilite, regime asymptotique et arrondis.
 endfunction
+//erreur à la ligne 21
